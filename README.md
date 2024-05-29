@@ -21,5 +21,19 @@ pip install requests
 # 原理
 采用 Request 方法，直接发送 GET 请求。
 
+程序流程：
+```mermaid
+flowchart LR
+id0(["程序开始"]) --> node{检测 Wi-Fi 名称是否为预设值}
+node --否--> node1(["退出"])
+node --是--> id1
+id1{"CheckInternetConnection"} --是--> id2(["输出：网络通畅"])
+id1 --否--> id4["输出：网络连接失败"]
+id4 --继续--> id3
+id3["Login()"] --> id5{"CheckInternetConnection"}
+id5 --是--> id7(["输出：网络通畅"])
+id5 --否--> id6(["输出：网络连接失败"])
+```
+
 # 可尝试的其他方法
 利用 WebDriver 模拟用户点击登录按钮。
