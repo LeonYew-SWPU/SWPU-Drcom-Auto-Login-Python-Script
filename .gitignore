@@ -7,7 +7,6 @@ __pycache__/
 # 忽略Python打包文件
 dist/
 build/
-*.spec
 
 # 忽略虚拟环境
 venv/

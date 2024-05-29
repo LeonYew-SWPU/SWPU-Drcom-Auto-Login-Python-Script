@@ -18,6 +18,21 @@ pip install requests
 ```
 **修改脚本中的用户名和密码**，运行脚本即可。
 
+## 如果你还想继续打包成 exe
+安装 pyinstaller
+```shell
+pip install pyinstaller
+```
+生成打包配置文件（若使用项目中提供的请跳过此步骤）
+```shell
+pyi-makespec -F -w AutoLoginSWPU.py
+```
+打包
+```shell
+pyinstaller AutoLoginSWPU.spec
+```
+到 dist 目录下找到 AutoLoginSWPU.exe 文件即可。
+
 # 原理
 采用 Request 方法，直接发送 GET 请求。
 
